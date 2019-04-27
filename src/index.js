@@ -27,17 +27,36 @@ const findRouteFromPath = (routes, path) => {
   // TODO: 404
 };
 
-const App = () => {
-  const path = window.location.pathname;
+const mapStateToPageProps = (state, setState) => {
+  return {
+  };
+};
 
+const App = (settings) => {
+  const [state, setState] = React.useState(settings.initialState);
+
+  const path = state.path === undefined ? settings.initialPath : state.path;
   const route = findRouteFromPath(routes, path);
 
-  return React.createElement(route.pageComponent);
+  const pageProps = mapStateToPageProps(state, setState);
+
+  return React.createElement(route.pageComponent, pageProps);
+};
+
+const createInitialAppState = () => {
+  return {
+    path: undefined,
+  };
 };
 
 window.addEventListener('DOMContentLoaded', () => {
+  const appSettings = {
+    initialPath: window.location.pathname,
+    initialState: createInitialAppState(),
+  };
+
   ReactDOM.render(
-    React.createElement(App, {}),
+    React.createElement(App, appSettings),
     document.querySelector('.js-app')
   );
 });
