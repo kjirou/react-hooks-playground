@@ -1,6 +1,6 @@
 {
   "name": "react-hooks-playground",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Hooooooooooooks!",
   "main": "index.js",
   "scripts": {
@@ -12,9 +12,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "SEE LICENSE IN https://github.com/kjirou/react-hooks-playground/blob/master/LICENSE",
   "bugs": {
     "url": "https://github.com/kjirou/react-hooks-playground/issues"
   },
-  "homepage": "https://github.com/kjirou/react-hooks-playground#readme"
+  "homepage": "https://github.com/kjirou/react-hooks-playground#readme",
+  "private": true
 }
