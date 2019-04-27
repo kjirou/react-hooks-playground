@@ -13,7 +13,7 @@ const TextInputBoundToState = (props) => {
       <h3>Bound to the state</h3>
       <div>
         <input type="text" value={props.inputValue} onChange={handleChange} />
-        <span>Remining {advice} characters.</span>
+        <span>{advice}</span>
       </div>
     </div>
   );
@@ -26,7 +26,7 @@ const initialState = {
 
 const mapStateToProps = (state, setState) => {
   return {
-    advice: `${state.maxLength - state.inputValue.length}/${state.maxLength}`,
+    advice: `Remining ${state.maxLength - state.inputValue.length}/${state.maxLength} characters.`,
     handleChange: (event) => {
       const inputValue = event.target.value;
       setState(state => {
