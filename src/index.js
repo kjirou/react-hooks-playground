@@ -1,6 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
+const {Root} = require('./components/Root');
 const {TopPage} = require('./components/TopPage');
 const {UseStatePage} = require('./components/UseStatePage');
 
@@ -80,7 +81,14 @@ const App = (settings) => {
 
   const pageProps = mapStateToPageProps(state, setState);
 
-  return React.createElement(route.pageComponent, pageProps);
+  return React.createElement(
+    Root,
+    pageProps,
+    React.createElement(
+      route.pageComponent,
+      pageProps,
+    )
+  );
 };
 
 const createInitialAppState = () => {

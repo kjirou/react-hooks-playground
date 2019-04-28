@@ -9,7 +9,6 @@ const TopPage = (props) => {
 
   return (
     <>
-      <h1>react-hooks-playground</h1>
       <ul>
         <li>
           <Link
