@@ -7,23 +7,45 @@ const TopPage = (props) => {
     generateClickOfLinkHandler,
   } = props;
 
+  const headingStyle = {
+    height: '48px',
+    fontSize: '24px',
+    lineHeight: '48px',
+    textAlign: 'center',
+    backgroundColor: '#EEE',
+  };
+
+  const itemStyle = {
+    height: '48px',
+    fontSize: '24px',
+    lineHeight: '48px',
+    textAlign: 'center',
+  };
+
   return (
-    <>
+    <div>
+      <h2 style={headingStyle}>Examples</h2>
       <ul>
-        <li>
+        <li style={itemStyle}>
           <Link
             label="useState"
             handleClickOfLink={generateClickOfLinkHandler('use-state')}
           />
         </li>
-        <li>
+        <li style={itemStyle}>
           <Link
-            label="Back to the Top"
-            handleClickOfLink={generateClickOfLinkHandler('top')}
+            label="Foo"
+            handleClickOfLink={generateClickOfLinkHandler('use-state')}
+          />
+        </li>
+        <li style={itemStyle}>
+          <Link
+            label="Bar"
+            handleClickOfLink={generateClickOfLinkHandler('use-state')}
           />
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 
