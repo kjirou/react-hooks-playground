@@ -1,8 +1,8 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const {TopPage} = require('./pages/TopPage');
-const {UseStatePage} = require('./pages/UseStatePage');
+const {TopPage} = require('./components/TopPage');
+const {UseStatePage} = require('./components/UseStatePage');
 
 const routes = {
   top: {
