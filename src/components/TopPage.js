@@ -1,30 +1,19 @@
 const React = require('react');
 
 const {Link} = require('./Link');
+const {
+  headingStyles,
+  itemStyle,
+} = require('./styles');
 
 const TopPage = (props) => {
   const {
     generateClickOfLinkHandler,
   } = props;
 
-  const headingStyle = {
-    height: '48px',
-    fontSize: '24px',
-    lineHeight: '48px',
-    textAlign: 'center',
-    backgroundColor: '#EEE',
-  };
-
-  const itemStyle = {
-    height: '48px',
-    fontSize: '24px',
-    lineHeight: '48px',
-    textAlign: 'center',
-  };
-
   return (
     <div>
-      <h2 style={headingStyle}>Examples</h2>
+      <h2 style={headingStyles[1]}>Examples</h2>
       <ul>
         <li style={itemStyle}>
           <Link

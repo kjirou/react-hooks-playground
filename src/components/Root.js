@@ -1,6 +1,9 @@
 const React = require('react');
 
 const {Link} = require('./Link');
+const {
+  headingStyles,
+} = require('./styles');
 
 const Root = (props) => {
   const {
@@ -14,29 +17,19 @@ const Root = (props) => {
     minHeight: 640,
   };
 
-  const navStyle = {
-    height: 48,
-    backgroundColor: '#ccc',
-    textAlign: 'center',
-  };
-
-  const navLinkStyle = {
-    lineHeight: '48px',
-    fontSize: '24px',
-  };
-
   const pageFrameStyle = {
     position: 'relative',
   };
 
   return (
     <div style={style}>
-      <nav style={navStyle}>
-        <Link
-          style={navLinkStyle}
-          label="React Hooks Playground"
-          handleClickOfLink={generateClickOfLinkHandler('top')}
-        />
+      <nav>
+        <h1 style={headingStyles[0]}>
+          <Link
+            label="React Hooks Playground"
+            handleClickOfLink={generateClickOfLinkHandler('top')}
+          />
+        </h1>
       </nav>
       <div style={pageFrameStyle}>{children}</div>
     </div>
