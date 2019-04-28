@@ -1,11 +1,22 @@
 const React = require('react');
 
-const TopPage = () => {
+const {Link} = require('../Link');
+
+const TopPage = (props) => {
+  const {
+    generateClickOfLinkHandler,
+  } = props;
+
   return (
     <>
       <h1>react-hooks-playground</h1>
       <ul>
-        <li><a href="?page-id=use-state">useState</a></li>
+        <li>
+          <Link
+            label="useState"
+            handleClickOfLink={generateClickOfLinkHandler('use-state')}
+          />
+        </li>
       </ul>
     </>
   );

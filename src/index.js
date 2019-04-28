@@ -38,6 +38,14 @@ const findRoute = (routes, pageId) => {
 
 const mapStateToPageProps = (state, setState) => {
   return {
+    generateClickOfLinkHandler: (pageId) => {
+      const handleClickOfLink = () => {
+        setState(state => Object.assign({}, state, {
+          pageId,
+        }));
+      };
+      return handleClickOfLink;
+    }
   };
 };
 
