@@ -1,5 +1,10 @@
 const React = require('react');
 
+const {
+  headingStyles,
+  itemStyle,
+} = require('./styles');
+
 const TextInputBoundToState = (props) => {
   const {
     advice,
@@ -7,13 +12,20 @@ const TextInputBoundToState = (props) => {
     inputValue,
   } = props;
 
+  const inputStyle = {
+    display: 'inline-block',
+    width: '95%',
+    height: '80%',
+    fontSize: '20px',
+    border: '2px solid #ccc',
+  };
+
   return (
     <div>
-      <h3>Bound to the state</h3>
-      <div>
-        <input type="text" value={props.inputValue} onChange={handleChange} />
-        <span>{advice}</span>
+      <div style={itemStyle}>
+        <input style={inputStyle} type="text" value={props.inputValue} onChange={handleChange} />
       </div>
+      <p style={itemStyle}>{advice}</p>
     </div>
   );
 };
@@ -42,11 +54,15 @@ const UseStatePage = () => {
   const props = mapStateToProps(state, setState);
 
   return (
-    <TextInputBoundToState
-      advice={props.advice}
-      handleChange={props.handleChange}
-      inputValue={props.inputValue}
-    />
+    <div>
+      <h2 style={headingStyles[1]}>useState</h2>
+      <h3 style={headingStyles[2]}>Bound to the state</h3>
+      <TextInputBoundToState
+        advice={props.advice}
+        handleChange={props.handleChange}
+        inputValue={props.inputValue}
+      />
+    </div>
   );
 };
 

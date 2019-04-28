@@ -1,6 +1,10 @@
 const React = require('react');
 
 const {Link} = require('./Link');
+const {
+  headingStyles,
+  itemStyle,
+} = require('./styles');
 
 const TopPage = (props) => {
   const {
@@ -8,23 +12,29 @@ const TopPage = (props) => {
   } = props;
 
   return (
-    <>
-      <h1>react-hooks-playground</h1>
+    <div>
+      <h2 style={headingStyles[1]}>Examples</h2>
       <ul>
-        <li>
+        <li style={itemStyle}>
           <Link
             label="useState"
             handleClickOfLink={generateClickOfLinkHandler('use-state')}
           />
         </li>
-        <li>
+        <li style={itemStyle}>
           <Link
-            label="Back to the Top"
-            handleClickOfLink={generateClickOfLinkHandler('top')}
+            label="Foo"
+            handleClickOfLink={generateClickOfLinkHandler('use-state')}
+          />
+        </li>
+        <li style={itemStyle}>
+          <Link
+            label="Bar"
+            handleClickOfLink={generateClickOfLinkHandler('use-state')}
           />
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

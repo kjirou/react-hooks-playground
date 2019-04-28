@@ -1,6 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
+const {Root} = require('./components/Root');
 const {TopPage} = require('./components/TopPage');
 const {UseStatePage} = require('./components/UseStatePage');
 
@@ -41,7 +42,7 @@ const pushStateToHistory = (pageId) => {
   window.history.pushState(null, null, `?page-id=${window.encodeURIComponent(pageId)}`);
 };
 
-const mapStateToPageProps = (state, setState) => {
+const mapStateToRootAndPageProps = (state, setState) => {
   return {
     generateClickOfLinkHandler: (pageId) => {
       const handleClickOfLink = () => {
@@ -78,9 +79,16 @@ const App = (settings) => {
   const pageId = state.pageId || parsePageIdFromUrl(settings.initialUrl);
   const route = findRoute(routes, pageId);
 
-  const pageProps = mapStateToPageProps(state, setState);
+  const rootAndPageProps = mapStateToRootAndPageProps(state, setState);
 
-  return React.createElement(route.pageComponent, pageProps);
+  return React.createElement(
+    Root,
+    rootAndPageProps,
+    React.createElement(
+      route.pageComponent,
+      rootAndPageProps,
+    )
+  );
 };
 
 const createInitialAppState = () => {
