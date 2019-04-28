@@ -17,6 +17,12 @@ const TopPage = (props) => {
             handleClickOfLink={generateClickOfLinkHandler('use-state')}
           />
         </li>
+        <li>
+          <Link
+            label="Back to the Top"
+            handleClickOfLink={generateClickOfLinkHandler('top')}
+          />
+        </li>
       </ul>
     </>
   );
