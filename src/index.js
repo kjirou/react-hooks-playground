@@ -75,9 +75,7 @@ const App = (settings) => {
     };
   }, []);
 
-  const pageId = state.pageId
-    ? state.pageId
-    : parsePageIdFromUrl(settings.initialUrl);
+  const pageId = state.pageId || parsePageIdFromUrl(settings.initialUrl);
   const route = findRoute(routes, pageId);
 
   const pageProps = mapStateToPageProps(state, setState);
