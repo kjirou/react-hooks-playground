@@ -1,6 +1,6 @@
 const React = require('react');
 
-const {Link} = require('../Link');
+const {Link} = require('./Link');
 
 const TopPage = (props) => {
   const {
