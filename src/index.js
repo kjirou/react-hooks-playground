@@ -42,7 +42,7 @@ const pushStateToHistory = (pageId) => {
   window.history.pushState(null, null, `?page-id=${window.encodeURIComponent(pageId)}`);
 };
 
-const mapStateToPageProps = (state, setState) => {
+const mapStateToRootAndPageProps = (state, setState) => {
   return {
     generateClickOfLinkHandler: (pageId) => {
       const handleClickOfLink = () => {
@@ -79,14 +79,14 @@ const App = (settings) => {
   const pageId = state.pageId || parsePageIdFromUrl(settings.initialUrl);
   const route = findRoute(routes, pageId);
 
-  const pageProps = mapStateToPageProps(state, setState);
+  const rootAndPageProps = mapStateToRootAndPageProps(state, setState);
 
   return React.createElement(
     Root,
-    pageProps,
+    rootAndPageProps,
     React.createElement(
       route.pageComponent,
-      pageProps,
+      rootAndPageProps,
     )
   );
 };
