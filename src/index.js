@@ -1,8 +1,8 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const {UseStatePage} = require('./pages/UseStatePage');
 const {TopPage} = require('./pages/TopPage');
+const {UseStatePage} = require('./pages/UseStatePage');
 
 /**
  * Parse an identifier for paging from "page-id={pageId}" in an absolute url
@@ -20,11 +20,11 @@ const parsePageIdFromUrl = (url) => {
 };
 
 const routes = {
-  'use-state': {
-    pageComponent: UseStatePage,
-  },
   top: {
     pageComponent: TopPage,
+  },
+  'use-state': {
+    pageComponent: UseStatePage,
   },
 };
 
