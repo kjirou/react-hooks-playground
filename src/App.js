@@ -35,34 +35,38 @@ function mapStateToRootAndPageProps(state, setState) {
         }));
       };
       return handleClickOfLink;
-    }
+    },
+    handlePopState: () => {
+      const pageId = parsePageIdFromUrl(window.location.href);
+
+      setState(state => Object.assign({}, state, {pageId}));
+    },
   };
 };
 
-export function App(settings) {
-  const [state, setState] = React.useState(settings.initialState);
+export function usePopStateEffect(props) {
+  const {handlePopState} = props;
 
-  // Set "popstate" effect
   React.useEffect(() => {
-    const handlePopState = () => {
-      const pageId = parsePageIdFromUrl(window.location.href);
-
-      setState(state => Object.assign({}, state, {
-        pageId,
-      }));
-    };
-
     window.addEventListener('popstate', handlePopState);
 
     return () => {
       window.removeEventListener('popstate', handlePopState);
     };
   }, []);
+}
+
+export function App(settings) {
+  const [state, setState] = React.useState(settings.initialState);
 
   const pageId = state.pageId || parsePageIdFromUrl(settings.initialUrl);
   const route = findRoute(routes, pageId);
 
   const rootAndPageProps = mapStateToRootAndPageProps(state, setState);
+
+  usePopStateEffect({
+    handlePopState: rootAndPageProps.handlePopState,
+  });
 
   return React.createElement(
     Root,
