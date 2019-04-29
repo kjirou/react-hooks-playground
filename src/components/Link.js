@@ -1,6 +1,6 @@
 const React = require('react');
 
-export const Link = (props) => {
+export function Link(props) {
   const {
     handleClickOfLink,
     label,

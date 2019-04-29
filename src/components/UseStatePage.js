@@ -5,7 +5,7 @@ import {
 
 const React = require('react');
 
-const TextInputBoundToState = (props) => {
+function TextInputBoundToState(props) {
   const {
     advice,
     handleChange,
@@ -35,7 +35,7 @@ const initialState = {
   maxLength: 5,
 };
 
-const mapStateToProps = (state, setState) => {
+function mapStateToProps(state, setState) {
   return {
     advice: `Remining ${state.maxLength - state.inputValue.length}/${state.maxLength} characters.`,
     handleChange: (event) => {
@@ -48,7 +48,7 @@ const mapStateToProps = (state, setState) => {
   };
 };
 
-export const UseStatePage = () => {
+export function UseStatePage() {
   const [state, setState] = React.useState(initialState);
 
   const props = mapStateToProps(state, setState);

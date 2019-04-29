@@ -6,7 +6,7 @@ import {
 
 const React = require('react');
 
-export const TopPage = (props) => {
+export function TopPage(props) {
   const {
     generateClickOfLinkHandler,
   } = props;

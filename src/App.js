@@ -17,7 +17,7 @@ const routes = {
   },
 };
 
-const findRoute = (routes, pageId) => {
+function findRoute(routes, pageId) {
   const found = routes[pageId];
 
   return found;
@@ -25,7 +25,7 @@ const findRoute = (routes, pageId) => {
   // TODO: 404
 };
 
-const mapStateToRootAndPageProps = (state, setState) => {
+function mapStateToRootAndPageProps(state, setState) {
   return {
     generateClickOfLinkHandler: (pageId) => {
       const handleClickOfLink = () => {
@@ -39,7 +39,7 @@ const mapStateToRootAndPageProps = (state, setState) => {
   };
 };
 
-export const App = (settings) => {
+export function App(settings) {
   const [state, setState] = React.useState(settings.initialState);
 
   // Set "popstate" effect

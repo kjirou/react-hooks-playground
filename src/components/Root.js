@@ -3,7 +3,7 @@ import {headingStyles} from './styles';
 
 const React = require('react');
 
-export const Root = (props) => {
+export function Root(props) {
   const {
     children,
     generateClickOfLinkHandler,
