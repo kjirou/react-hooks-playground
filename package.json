@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "develop": "$(npm bin)/parcel --public-url '/react-hooks-playground/' src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "$(npm bin)/mocha --require @babel/register --recursive 'src/**/__tests__/**/*-test.js'"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,10 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.0.0",
-    "parcel-bundler": "^1.12.3"
+    "@babel/register": "^7.4.4",
+    "jsdom": "^15.0.0",
+    "mocha": "^6.1.4",
+    "parcel-bundler": "^1.12.3",
+    "sinon": "^7.3.2"
   }
 }
