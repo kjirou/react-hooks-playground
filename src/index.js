@@ -1,17 +1,12 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
+const {createApplicationState} = require('./state-manager');
 const {App} = require('./App');
-
-const createInitialAppState = () => {
-  return {
-    pageId: null,
-  };
-};
 
 window.addEventListener('DOMContentLoaded', () => {
   const appSettings = {
-    initialState: createInitialAppState(),
+    initialState: createApplicationState(),
     initialUrl: window.location.href,
   };
 
