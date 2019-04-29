@@ -1,8 +1,8 @@
+import {App} from './App';
+import {createApplicationState} from './state-manager';
+
 const React = require('react');
 const ReactDOM = require('react-dom');
-
-const {createApplicationState} = require('./state-manager');
-const {App} = require('./App');
 
 window.addEventListener('DOMContentLoaded', () => {
   const appSettings = {

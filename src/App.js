@@ -1,12 +1,12 @@
-const React = require('react');
-
-const {Root} = require('./components/Root');
-const {TopPage} = require('./components/TopPage');
-const {UseStatePage} = require('./components/UseStatePage');
+import {Root} from './components/Root';
+import {TopPage} from './components/TopPage';
+import {UseStatePage} from './components/UseStatePage';
 import {
   parsePageIdFromUrl,
   pushStateToHistory,
 } from './utils';
+
+const React = require('react');
 
 const routes = {
   top: {
