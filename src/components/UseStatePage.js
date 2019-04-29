@@ -1,9 +1,9 @@
-const React = require('react');
-
-const {
+import {
   headingStyles,
   itemStyle,
-} = require('./styles');
+} from './styles';
+
+const React = require('react');
 
 const TextInputBoundToState = (props) => {
   const {
@@ -48,7 +48,7 @@ const mapStateToProps = (state, setState) => {
   };
 };
 
-const UseStatePage = () => {
+export const UseStatePage = () => {
   const [state, setState] = React.useState(initialState);
 
   const props = mapStateToProps(state, setState);
@@ -64,8 +64,4 @@ const UseStatePage = () => {
       />
     </div>
   );
-};
-
-module.exports = {
-  UseStatePage,
 };

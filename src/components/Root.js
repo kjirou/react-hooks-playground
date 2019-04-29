@@ -1,11 +1,9 @@
+import {Link} from './Link';
+import {headingStyles} from './styles';
+
 const React = require('react');
 
-const {Link} = require('./Link');
-const {
-  headingStyles,
-} = require('./styles');
-
-const Root = (props) => {
+export const Root = (props) => {
   const {
     children,
     generateClickOfLinkHandler,
@@ -34,8 +32,4 @@ const Root = (props) => {
       <div style={pageFrameStyle}>{children}</div>
     </div>
   );
-};
-
-module.exports = {
-  Root,
 };

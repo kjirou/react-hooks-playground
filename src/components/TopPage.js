@@ -1,12 +1,12 @@
-const React = require('react');
-
-const {Link} = require('./Link');
-const {
+import {Link} from './Link';
+import {
   headingStyles,
   itemStyle,
-} = require('./styles');
+} from './styles';
 
-const TopPage = (props) => {
+const React = require('react');
+
+export const TopPage = (props) => {
   const {
     generateClickOfLinkHandler,
   } = props;
@@ -36,8 +36,4 @@ const TopPage = (props) => {
       </ul>
     </div>
   );
-};
-
-module.exports = {
-  TopPage,
 };

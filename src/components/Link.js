@@ -1,6 +1,6 @@
 const React = require('react');
 
-const Link = (props) => {
+export const Link = (props) => {
   const {
     handleClickOfLink,
     label,
@@ -14,8 +14,4 @@ const Link = (props) => {
       style={style}
     >{label}</a>
   );
-};
-
-module.exports = {
-  Link,
 };

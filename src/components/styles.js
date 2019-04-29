@@ -5,7 +5,7 @@ const heading3BackgroundColor = '#eee';
 const baseFontSize = '24px';
 const baseItemHeight = '48px';
 
-const headingStyles = [
+export const headingStyles = [
   heading1BackgroundColor,
   heading2BackgroundColor,
   heading3BackgroundColor,
@@ -19,14 +19,9 @@ const headingStyles = [
   };
 });
 
-const itemStyle = {
+export const itemStyle = {
   height: baseItemHeight,
   lineHeight: baseItemHeight,
   fontSize: baseFontSize,
   textAlign: 'center',
-};
-
-module.exports = {
-  headingStyles,
-  itemStyle,
 };
