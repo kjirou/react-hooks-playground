@@ -1,11 +1,11 @@
-const React = require('react');
-
-const {
+import {
   headingStyles,
   itemStyle,
-} = require('./styles');
+} from './styles';
 
-const TextInputBoundToState = (props) => {
+const React = require('react');
+
+function TextInputBoundToState(props) {
   const {
     advice,
     handleChange,
@@ -35,7 +35,7 @@ const initialState = {
   maxLength: 5,
 };
 
-const mapStateToProps = (state, setState) => {
+function mapStateToProps(state, setState) {
   return {
     advice: `Remining ${state.maxLength - state.inputValue.length}/${state.maxLength} characters.`,
     handleChange: (event) => {
@@ -48,7 +48,7 @@ const mapStateToProps = (state, setState) => {
   };
 };
 
-const UseStatePage = () => {
+export function UseStatePage() {
   const [state, setState] = React.useState(initialState);
 
   const props = mapStateToProps(state, setState);
@@ -64,8 +64,4 @@ const UseStatePage = () => {
       />
     </div>
   );
-};
-
-module.exports = {
-  UseStatePage,
 };
